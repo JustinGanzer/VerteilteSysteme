@@ -4,7 +4,13 @@ import java.net.*;
 public class Aufgabe02Server {
 
 	public static void main(String[] args) {
-		int serverPort = 9021;
+		try{
+		int serverPort = 9000 + args[0];
+		}
+		catch(Exception e){
+			System.out.Println(args[0] + " ist kein gültiger Portbereich");
+			System.exit(0);
+		}
     System.out.println("S: Start auf Host sun65" +
                        " am Port "+serverPort);
 
